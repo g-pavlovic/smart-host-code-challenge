@@ -1,0 +1,3 @@
+export enum HOTEL_ACTIONS {
+  SET_GUESTS = "SET_GUESTS"
+}
