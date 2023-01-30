@@ -57,21 +57,24 @@ function Home() {
   return (
     <div className="page-container">
       <div className="form">
-        <div className="form-field">
-          <label>Free Premium Rooms:</label>
-          <input value={rooms.premium} onChange={(e) => handleChangeRooms("premium", e)} type="text"/>
+        <div className="fields">
+          <div className="form-field">
+            <label>Free Premium Rooms:</label>
+            <input value={rooms.premium} onChange={(e) => handleChangeRooms("premium", e)} type="text"/>
+          </div>
+          <div className="form-field">
+            <label>Free Economy Rooms:</label>
+            <input value={rooms.economy} onChange={(e) => handleChangeRooms("economy", e)} type="text"/>
+          </div>
         </div>
-        <div className="form-field">
-          <label>Free Economy Rooms:</label>
-          <input value={rooms.economy} onChange={(e) => handleChangeRooms("economy", e)} type="text"/>
+
+        {!!results &&
+        <div className="results">
+          <p>Usage Premium: {results.usagePremiumRooms} (EUR {results.premiumPrice})</p>
+          <p>Usage Economy: {results.usageEconomyRooms} (EUR {results.economyPrice})</p>
         </div>
+        }
       </div>
-      {!!results &&
-      <div className="results">
-        <p>Usage Premium: {results.usagePremiumRooms} (EUR {results.premiumPrice})</p>
-        <p>Usage Economy: {results.usageEconomyRooms} (EUR {results.economyPrice})</p>
-      </div>
-      }
     </div>
   );
 }

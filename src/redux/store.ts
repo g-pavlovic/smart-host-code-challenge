@@ -1,9 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import * as History from "history";
 import rootReducer from "./reducers";
-
-export const history = History.createBrowserHistory();
 
 declare global {
   interface Window {
